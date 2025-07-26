@@ -38,7 +38,7 @@ export default function StatCards() {
 
   // Compute total emissions from context data
   const totalEmissions = data.reduce((sum, item) => {
-    const val = parseFloat(item.Emissions ?? item.emissions ?? "0");
+    const val = parseFloat(item.Emissions ?? "0");
     return sum + (isNaN(val) ? 0 : val);
   }, 0);
 

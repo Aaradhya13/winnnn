@@ -62,8 +62,8 @@ export default function BarChart() {
   // Group by Industry and sum emissions
   const industryMap = new Map<string, number>();
   data.forEach(item => {
-    const industry = item.Industry ?? item.industry;
-    const emissions = parseFloat(item.Emissions ?? item.emissions ?? "0");
+    const industry = item.Industry;
+    const emissions = parseFloat(item.Emissions ?? "0");
     if (industry && !isNaN(emissions)) {
       const current = industryMap.get(industry) || 0;
       industryMap.set(industry, current + emissions);
